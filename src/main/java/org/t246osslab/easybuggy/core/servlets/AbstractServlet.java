@@ -93,7 +93,7 @@ public abstract class AbstractServlet extends HttpServlet {
             writer.write("<hr style=\"margin-top:0px\">");
             writer.write(htmlBody);
             writer.write("</BODY>");
-            writer.write(DefaultEncoder.getInstance().encodeForHTML(htmlBody));
+            writer.write("</HTML>");
 
         } catch (Exception e) {
             log.error("Exception occurs: ", e);
