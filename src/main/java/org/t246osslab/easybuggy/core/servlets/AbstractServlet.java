@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.owasp.esapi.ESAPI;
+import org.owasp.esapi.reference.DefaultEncoder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.t246osslab.easybuggy.core.utils.Closer;
@@ -91,7 +92,7 @@ public abstract class AbstractServlet extends HttpServlet {
             }
             writer.write("</tr>");
             writer.write("</table>");
-            writer.write("<hr style=\"margin-top:0px\">");
+            writer.write(DefaultEncoder.getInstance().encodeForHTML(htmlBody));
             writer.write(htmlBody);
             writer.write("</BODY>");
             writer.write(Encoder.forHtmlContentXss(htmlBody));
