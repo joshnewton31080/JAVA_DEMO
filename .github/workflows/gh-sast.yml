@@ -42,8 +42,7 @@ jobs:
           name: TS Results
           path: ThunderScan-Report.html
           retention-days: 1
- 
- codeql:
+  codeql:
     name: CodeQL
     runs-on: ubuntu-latest
 
