@@ -1,6 +1,7 @@
 package org.t246osslab.easybuggy.core.servlets;
 
 import javax.servlet.http.HttpServlet;
+import io.whitesource.cure.Encoder;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -91,7 +92,7 @@ public abstract class AbstractServlet extends HttpServlet {
             writer.write("</tr>");
             writer.write("</table>");
             writer.write("<hr style=\"margin-top:0px\">");
-            writer.write(htmlBody);
+            writer.write(Encoder.forHtmlContentXss(htmlBody));
             writer.write("</BODY>");
             writer.write("</HTML>");
 
